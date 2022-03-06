@@ -70,7 +70,7 @@ continue moving about the arena until only one remains.
     direction
 -   [ ] User can see bots pause for an instant when they collide.
 -   [ ] User can see a bot disappear after colliding if the result of it's
-    boolean operation appied to its boolean value and that of the bot is has
+    boolean operation applied to its boolean value and that of the bot is has
     collided with result in 0.
 -   [ ] User can see a bot that wins a collision resume its path at the same
     speed and direction.
