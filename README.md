@@ -14,6 +14,8 @@ implementation of an app idea from [app-ideas](https://github.com/florinpop17/ap
 - build project: `npm run build`
 - open in a web browser **dist/index.html**
 
+## Description
+
 **Tier:** 3-Advanced
 
 Boole Bots is a game that is not only fun, but also an aid in helping to
