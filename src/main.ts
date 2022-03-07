@@ -1,13 +1,12 @@
 import "./style.css";
+import * as PIXI from "pixi.js";
 
 const controls = document.querySelector<HTMLDivElement>("#controls");
-const canvas = document.querySelector<HTMLCanvasElement>("#main-canvas");
 
-if (!controls || !canvas) {
+if (!controls) {
+  // Display an error to User
   throw new Error("controls tags not found");
 }
 
-controls.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+const app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight });
+document.body.appendChild(app.view);
