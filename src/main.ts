@@ -1,12 +1,8 @@
 import "./style.css";
-import * as PIXI from "pixi.js";
+import { Arena } from "./ui/Arena";
+import "./ui/Controls/Controls";
+import "./ui/Configuration";
+import "./ui/Leaderboard";
 
-const controls = document.querySelector<HTMLDivElement>("#controls");
-
-if (!controls) {
-  // Display an error to User
-  throw new Error("controls tags not found");
-}
-
-const app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight });
-document.body.appendChild(app.view);
+const arena = new Arena(document, { width: window.innerWidth, height: window.innerHeight });
+console.log(arena);
