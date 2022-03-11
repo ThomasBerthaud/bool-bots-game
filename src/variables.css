@@ -1,0 +1,9 @@
+body {
+    --white: rgb(255, 255, 255);
+    --primary: #3d5afe;  /* color: white */
+    --primary-dark: #304ffe;  /* color: white */
+    --primary-light: #536dfe; /* color: black */
+
+    --text-primary: #2c3e50;
+    --background: #EDF2F4;
+}

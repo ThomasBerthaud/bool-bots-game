@@ -1,5 +1,5 @@
 export class Bot {
-  constructor() {
-    console.log("init bot");
-  }
+    constructor() {
+        console.log("init bot");
+    }
 }

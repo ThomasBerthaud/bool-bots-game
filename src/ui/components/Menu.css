@@ -1,0 +1,20 @@
+.menu-expand-icon {
+    margin: 6px 6px 0 0;
+    color: white;
+    cursor: pointer;
+}
+.menu {
+    padding: 0.75rem;
+    color: var(--text-primary);
+    background: var(--background);
+    border: 1px solid var(--background);
+    border-radius: 10px;
+    width: 50vw;
+    min-height: 100px;
+    position: relative;
+}
+.menu .menu-close-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}

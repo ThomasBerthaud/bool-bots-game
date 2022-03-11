@@ -1,14 +1,4 @@
-import { Application, IApplicationOptions } from "pixi.js";
+import { Application } from "pixi.js";
 
-export class Arena {
-  app: Application;
-
-  constructor(document: Document, options?: IApplicationOptions) {
-    this.app = new Application(options);
-    document.body.appendChild(this.app.view);
-  }
-
-  addSprite(path: string): void {
-    throw new Error("unimplemented" + path);
-  }
-}
+// TODO create a redux to store game informations
+export const pixiArena = new Application({ width: window.innerWidth, height: window.innerHeight });
