@@ -8,6 +8,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
+                    vendor: ["react", "react-dom", "redux", "@reduxjs/toolkit"],
                     pixi: ["pixi.js"],
                 },
             },
