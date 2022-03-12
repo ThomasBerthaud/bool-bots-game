@@ -1,0 +1,14 @@
+.controls-icon {
+    cursor: pointer;
+    color: var(--white);
+}
+
+.controls-icon.play:hover {
+    color: var(--play);
+}
+.controls-icon.pause:hover {
+    color: var(--pause);
+}
+.controls-icon.stop:hover {
+    color: var(--stop);
+}

@@ -1,0 +1,7 @@
+.bot-panel {
+    padding: var(--spacing);
+}
+
+.bot-panel .svg-inline--fa {
+    cursor: pointer;
+}

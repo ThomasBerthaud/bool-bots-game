@@ -1,0 +1,3 @@
+.leaderboard-menu .menu-expand-icon:hover, .leaderboard-menu.active .menu-expand-icon {
+    color: var(--leaderboard);
+}

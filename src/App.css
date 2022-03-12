@@ -1,6 +1,10 @@
 .game-controls {
     position: absolute;
+    left: 0;
     top: 0;
     right: 0;
-    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing);
+    margin: var(--spacing);
 }
