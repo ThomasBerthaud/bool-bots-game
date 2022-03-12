@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Controls: React.VFC = () => {
+export const UILeaderboard: React.VFC = () => {
     return <div></div>;
 };

@@ -1,15 +1,22 @@
 import "./App.css";
-import { Leaderboard } from "./ui/Leaderboard";
-import { Controls } from "./ui/Controls";
-import { Configuration } from "./ui/Configuration";
+import { UILeaderboard } from "./ui/UILeaderboard";
+import { UIControls } from "./ui/UIControls";
+import { UIConfiguration } from "./ui/UIConfiguration";
 import React from "react";
+import { UIArena } from "./ui/UIArena";
+import { arenaRepository } from "./domain/arena/ArenaRepository";
+
+const arenaView = arenaRepository.getView();
 
 export const App: React.VFC = () => {
     return (
-        <div className="game-controls">
-            <Controls />
-            <Leaderboard />
-            <Configuration />
-        </div>
+        <>
+            <div className="game-controls">
+                <UIControls />
+                <UILeaderboard />
+                <UIConfiguration />
+            </div>
+            <UIArena arenaView={arenaView} />
+        </>
     );
 };
