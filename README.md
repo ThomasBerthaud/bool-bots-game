@@ -35,7 +35,7 @@ continue moving about the arena until only one remains.
 
 ## User Stories
 
--   [ ] User can see the game window with these components
+-   [X] User can see the game window with these components
     -   Game configuration input panel
     -   Leaderboard showing bots ranked by their scores
     -   Game controls
