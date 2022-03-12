@@ -1,9 +1,26 @@
 body {
     --white: rgb(255, 255, 255);
-    --primary: #3d5afe;  /* color: white */
-    --primary-dark: #304ffe;  /* color: white */
+    --primary: #3d5afe; /* color: white */
+    --primary-dark: #304ffe; /* color: white */
     --primary-light: #536dfe; /* color: black */
+    --secondary: #616161;
+    --secondary-dark: #424242;
+    --secondary-light: #757575;
 
-    --text-primary: #2c3e50;
-    --background: #EDF2F4;
+    --text-primary: #263238;
+    --background: #eceff1;
+
+    --spacing-sm: 0.75rem;
+    --spacing: 1rem;
+    --spacing-lg: 1.25rem;
+
+    --border-radius-sm: 0.25rem;
+    --border-radius: 0.5rem;
+    --border-radius-lg: 0.75rem;
+
+    --play: #00e676; /* green A400 */
+    --pause: #00e676;
+    --stop: #e61c00;
+    --leaderboard: #ffc400; /* Amber A400 */
+    --configuration: #9e9e9e; /* Grey 500 */
 }

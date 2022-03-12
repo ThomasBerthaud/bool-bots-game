@@ -1,3 +1,5 @@
+@import "variables.css";
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -10,20 +12,31 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-/* DESIGN SYSTEM */
+.svg-inline--fa:focus {
+    outline: none;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--background)  0px 0px 0px 2px, currentColor 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
 
+/* DESIGN SYSTEM */
 .btn {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: var(--border-radius-sm);
     border: 1px solid transparent;
-    padding: 0.75rem;
+    padding: var(--spacing-sm);
     outline: none;
+    transition: all 150ms linear;
 }
+.btn.btn-lg {
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    font-size: 1.25rem;
+}
+
 .btn.primary {
-    color: white;
+    color: var(--white);
     background-color: var(--primary);
     border-color: var(--primary);
-    text-transform: uppercase;
 }
 .btn.primary:hover {
     background-color: var(--primary-dark);
@@ -33,10 +46,76 @@ code {
 .btn.primary:focus {
     background-color: var(--primary-dark);
     border-color: var(--primary-dark);
-    box-shadow: var(--white) 0px 0px 0px 2px, var(--primary-dark) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    box-shadow: var(--background) 0px 0px 0px 2px, var(--primary-dark) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+.btn.primary.outline {
+    color: var(--primary);
+    background-color: transparent;
+}
+.btn.primary.outline:hover {
+    color: var(--white);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.btn.primary.outline:active,
+.btn.primary.outline:focus {
+    color: var(--white);
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: var(--background) 0px 0px 0px 2px, var(--primary) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+.btn.secondary {
+    color: var(--white);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn.secondary:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+.btn.secondary:active,
+.btn.secondary:focus {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+    box-shadow: var(--background) 0px 0px 0px 2px, var(--secondary-dark) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+.btn.secondary.outline {
+    color: var(--secondary);
+    background-color: transparent;
+}
+.btn.secondary.outline:hover {
+    color: var(--white);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.btn.secondary.outline:active,
+.btn.secondary.outline:focus {
+    color: var(--white);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    box-shadow: var(--background) 0px 0px 0px 2px, var(--secondary) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 }
 
 /* UTILITIES */
 .text-center {
-    text-align: center;
+    text-align: center !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.color-white {
+    color: var(--white) !important;
+}
+
+.color-primary {
+    color: var(--primary) !important;
+}
+
+.color-secondary {
+    color: var(--secondary) !important;
 }

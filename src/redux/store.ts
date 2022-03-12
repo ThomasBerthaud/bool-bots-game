@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import arenaReducer from "../domain/arena/ArenaSlice";
+import arenaReducer from "./ArenaSlice";
+import menuReducer from "./MenuSlice";
 
 export const store = configureStore({
     reducer: {
         arena: arenaReducer,
+        menu: menuReducer,
     },
 });
 

@@ -1,0 +1,3 @@
+.configuration-menu .menu-expand-icon:hover, .configuration-menu.active .menu-expand-icon {
+    color: var(--configuration);
+}
