@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Leaderboard: React.VFC = () => {
+export const UIControls: React.VFC = () => {
     return <div></div>;
 };
