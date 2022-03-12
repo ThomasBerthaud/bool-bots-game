@@ -1,10 +1,17 @@
-.game-controls {
+.game-options {
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: var(--spacing);
     margin: var(--spacing);
+    display: grid;
+    grid-gap: var(--spacing);
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.game-configuration {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    justify-self: flex-end;
 }
