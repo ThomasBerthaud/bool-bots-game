@@ -23,10 +23,10 @@ export const Menu: React.VFC<MenuProps> = ({ icon, iconTitle, position, children
 
     let positionStyle: CSSProperties;
     switch (position) {
-        case "right":
+        case "left":
             positionStyle = { right: 0 };
             break;
-        case "left":
+        case "right":
         default:
             positionStyle = { left: 0 };
     }

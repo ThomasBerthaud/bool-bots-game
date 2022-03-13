@@ -16,7 +16,7 @@ export const UIConfiguration: React.VFC = () => {
     ));
 
     return (
-        <Menu icon={faGear} iconTitle="Configuration" className="configuration-menu" position="right">
+        <Menu icon={faGear} iconTitle="Configuration" className="configuration-menu" position="left">
             <h2 className="text-center">Bots Configuration</h2>
             {has2BotsWithSameName(bots) && (
                 <div className="name-error">Sorry two bots can&apos;t have the same name</div>

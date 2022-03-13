@@ -5,7 +5,7 @@ import { Menu } from "./components/Menu";
 
 export const UILeaderboard: React.VFC = () => {
     return (
-        <Menu icon={faTrophy} iconTitle="Leaderboard" className="leaderboard-menu" position="right">
+        <Menu icon={faTrophy} iconTitle="Leaderboard" className="leaderboard-menu" position="left">
             <h2>LeaderBoard</h2>
             <ol>
                 <li>Gaston</li>
