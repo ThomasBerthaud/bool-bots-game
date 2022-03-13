@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface MenuState {
-    openMenu: string | false;
+    openedMenu: string | false;
 }
 
 const initialState: MenuState = {
-    openMenu: false,
+    openedMenu: false,
 };
 
 export const menuSlice = createSlice({
@@ -13,10 +13,10 @@ export const menuSlice = createSlice({
     initialState,
     reducers: {
         openMenu: (state, { payload }: PayloadAction<string>) => {
-            state.openMenu = payload;
+            state.openedMenu = payload;
         },
         closeMenu: (state) => {
-            state.openMenu = false;
+            state.openedMenu = false;
         },
     },
 });

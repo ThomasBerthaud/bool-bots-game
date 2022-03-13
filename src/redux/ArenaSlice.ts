@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BotConfigurationModel } from "../domain/arena/bot/BotConfigurationModel";
+import { startingBots } from "../data/startingBots";
+import { BotConfigurationEntity } from "../domain/arena/bot/BotConfigurationEntity";
 
 export interface ArenaState {
     running: boolean;
-    bots: BotConfigurationModel[];
+    bots: BotConfigurationEntity[];
 }
 
 const initialState: ArenaState = {
     running: false,
-    bots: [],
+    bots: startingBots,
 };
 
 export const arenaSlice = createSlice({
@@ -16,6 +17,7 @@ export const arenaSlice = createSlice({
     initialState,
     reducers: {
         startArena: (state) => {
+            // TODO check for bots configuration validity
             state.running = true;
         },
         pauseArena: (state) => {
@@ -26,13 +28,13 @@ export const arenaSlice = createSlice({
             state.running = false;
         },
         addBot: (state) => {
-            const newBot: BotConfigurationModel = {
+            const newBot: BotConfigurationEntity = {
                 id: state.bots.length,
             };
             state.bots.push(newBot);
         },
-        setBotConfiguration: (state, { payload }: PayloadAction<BotConfigurationModel>) => {
-            state.bots[payload.id] = payload;
+        setBotConfiguration: (state, { payload }: PayloadAction<BotConfigurationEntity>) => {
+            state.bots[payload.id] = { ...state.bots[payload.id], ...payload };
         },
         deleteBot: (state, { payload }: PayloadAction<number>) => {
             state.bots.splice(payload, 1);

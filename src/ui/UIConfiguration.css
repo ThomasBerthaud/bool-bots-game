@@ -1,3 +1,18 @@
 .configuration-menu .menu-expand-icon:hover, .configuration-menu.active .menu-expand-icon {
     color: var(--configuration);
 }
+
+.bots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--spacing-sm);
+    margin: var(--spacing) 0;
+    max-height: calc(100vh - 240px);
+    overflow: auto;
+}
+
+.configuration-menu .name-error {
+    color: var(--error);
+    margin-top: var(--spacing-lg);
+    font-weight: 700;
+}
