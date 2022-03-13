@@ -31,20 +31,22 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
         </option>
     ));
 
-    // TODO handle no name inputted
     return (
         <div className="bot-panel">
             <Icon icon={faXmark} title="Delete bot" className="fa-lg" onClick={() => dispatch(deleteBot(bot.id))} />
             <h3>Bot n°{bot.id + 1}</h3>
             <form>
-                <label htmlFor="name" className={hasSameNameError ? "error" : ""}>
+                <label htmlFor="name" className={hasSameNameError || !bot.name ? "error" : ""}>
                     Name:
-                    <input
-                        type="text"
-                        name="name"
-                        value={bot.name}
-                        onChange={(event) => dispatchConfigUpdate({ name: event.target.value })}
-                    />
+                    <div className="name-input">
+                        <input
+                            type="text"
+                            name="name"
+                            value={bot.name}
+                            onChange={(event) => dispatchConfigUpdate({ name: event.target.value })}
+                        />
+                        {!bot.name && <span>You need to provide a name</span>}
+                    </div>
                 </label>
                 <label htmlFor="boolean-value">
                     Boolean value:

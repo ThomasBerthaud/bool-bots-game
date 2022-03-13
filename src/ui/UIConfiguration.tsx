@@ -19,7 +19,7 @@ export const UIConfiguration: React.VFC = () => {
         <Menu icon={faGear} iconTitle="Configuration" className="configuration-menu" position="right">
             <h2 className="text-center">Bots Configuration</h2>
             {has2BotsWithSameName(bots) && (
-                <label className="name-error">Sorry two bots can&apos;t have the same name</label>
+                <div className="name-error">Sorry two bots can&apos;t have the same name</div>
             )}
             <div className="bots">{botPanels}</div>
             <button onClick={() => dispatch(addBot())} className="btn primary">

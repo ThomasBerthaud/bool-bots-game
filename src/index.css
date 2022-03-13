@@ -29,8 +29,6 @@ code {
 
 /* DESIGN SYSTEM */
 .btn {
-    position: relative;
-    z-index: 1;
     cursor: pointer;
     border-radius: var(--border-radius-sm);
     border: 1px solid transparent;
@@ -42,7 +40,7 @@ code {
 .btn.btn-lg {
     border-radius: var(--border-radius);
     padding: var(--spacing);
-    font-size: var(--spacing-lg);
+    font-size: 1.25rem;
 }
 
 .btn.primary {

@@ -9,6 +9,7 @@ export const UIControls: React.VFC = () => {
     const playing = useAppSelector((state) => state.arena.running);
     const dispatch = useAppDispatch();
 
+    // TODO disable button when bots are not valid
     const icon = !playing ? (
         <Icon
             icon={faPlay}
