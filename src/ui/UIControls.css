@@ -18,3 +18,7 @@
 .controls-icon.stop:hover {
     color: var(--stop);
 }
+
+.controls-container .disabled {
+    color: var(--disabled);
+}

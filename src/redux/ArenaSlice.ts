@@ -30,6 +30,9 @@ export const arenaSlice = createSlice({
         addBot: (state) => {
             const newBot: BotConfigurationEntity = {
                 id: state.bots.length,
+                name: "",
+                speed: 1,
+                booleanValue: false,
             };
             state.bots.push(newBot);
         },
@@ -37,7 +40,8 @@ export const arenaSlice = createSlice({
             state.bots[payload.id] = { ...state.bots[payload.id], ...payload };
         },
         deleteBot: (state, { payload }: PayloadAction<number>) => {
-            state.bots.splice(payload, 1);
+            const botIndex = state.bots.findIndex((bot) => bot.id === payload);
+            state.bots.splice(botIndex, 1);
         },
     },
 });

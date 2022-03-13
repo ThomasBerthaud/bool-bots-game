@@ -11,7 +11,7 @@ export const Icon: React.VFC<IconProps> = ({ onClick, ...props }) => {
     return (
         <FontAwesomeIcon
             {...props}
-            focusable={true}
+            focusable={props["aria-disabled"]}
             aria-hidden={"false"}
             tabIndex={0}
             onClick={onClick}

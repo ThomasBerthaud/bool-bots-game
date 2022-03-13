@@ -4,18 +4,22 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { faPause, faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 import { pauseArena, startArena, stopArena } from "../redux/ArenaSlice";
 import { Icon } from "./components/Icon";
+import { areBotsValid } from "../domain/arena/bot/BotConfigurationEntity";
 
 export const UIControls: React.VFC = () => {
-    const playing = useAppSelector((state) => state.arena.running);
+    const { running, bots } = useAppSelector((state) => state.arena);
     const dispatch = useAppDispatch();
 
-    // TODO disable button when bots are not valid
-    const icon = !playing ? (
+    const isValid = areBotsValid(bots);
+    const playIconClass = isValid ? "controls-icon" : "disabled";
+
+    const icon = !running ? (
         <Icon
             icon={faPlay}
             title="Battle!"
-            className="controls-icon play fa-2xl"
-            onClick={() => dispatch(startArena())}
+            className={playIconClass + " play fa-2xl"}
+            onClick={() => isValid && dispatch(startArena())}
+            aria-disabled={!isValid}
         />
     ) : (
         <>

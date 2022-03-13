@@ -1,12 +1,12 @@
 import React from "react";
 import "./UIBotPanel.css";
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { deleteBot, setBotConfiguration } from "../redux/ArenaSlice";
-import { BotConfigurationEntity } from "../domain/arena/bot/BotConfigurationEntity";
-import { Icon } from "./components/Icon";
-import { BotConfigurationModel, BotDirection, BotOperation } from "../domain/arena/bot/BotConfigurationModel";
-import { enumKeys } from "../utils/enumKeys";
+import { deleteBot, setBotConfiguration } from "../../redux/ArenaSlice";
+import { BotConfigurationEntity } from "../../domain/arena/bot/BotConfigurationEntity";
+import { Icon } from "./Icon";
+import { BotConfigurationModel, BotDirection, BotOperation } from "../../domain/arena/bot/BotConfigurationModel";
+import { enumKeys } from "../../utils/enumKeys";
 
 export type BotPanelProps = {
     bot: BotConfigurationEntity;
@@ -54,7 +54,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
                         type="checkbox"
                         name="boolean-value"
                         checked={bot.booleanValue}
-                        onChange={(event) => dispatchConfigUpdate({ booleanValue: event.target.value === "true" })}
+                        onChange={(event) => dispatchConfigUpdate({ booleanValue: event.target.checked })}
                     />
                 </label>
                 <label htmlFor="speed">

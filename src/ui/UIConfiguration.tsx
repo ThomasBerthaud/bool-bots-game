@@ -1,7 +1,7 @@
 import "./UIConfiguration.css";
 import React from "react";
 import { Menu } from "./components/Menu";
-import { UIBotPanel } from "./UIBotPanel";
+import { UIBotPanel } from "./components/UIBotPanel";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { addBot } from "../redux/ArenaSlice";
