@@ -1,7 +1,35 @@
 .bot-panel {
-    padding: var(--spacing);
+    position: relative;
+    border: 1px solid var(--panel-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-sm);
+    background-color: var(--white);
 }
 
-.bot-panel .svg-inline--fa {
+.bot-panel .svg-inline--fa.fa-xmark {
     cursor: pointer;
+    position: absolute;
+    right: 6px;
+    top: 2px;
+}
+
+.bot-panel h3 {
+    margin-bottom: var(--spacing);
+}
+
+.bot-panel label {
+    display: flex;
+    margin: var(--spacing-sm) 0;
+}
+.bot-panel label > * {
+    margin-left: var(--spacing-sm);
+}
+.bot-panel label > input[type="text"],
+.bot-panel label > input[type="range"],
+.bot-panel label > select {
+    width: 100%;
+}
+
+.bot-panel label.error, .bot-panel label.error input {
+    color: var(--error);
 }

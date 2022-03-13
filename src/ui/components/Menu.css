@@ -7,11 +7,12 @@
     background: var(--background);
     border: 1px solid var(--background);
     border-radius: var(--border-radius);
-    width: 50vw;
+    box-shadow: var(--box-shadow);
+    width: 66vw;
     min-height: 100px;
+    max-height: calc(100vh - 95px);
     position: absolute;
     top: 40px;
-    right: 0;
 }
 .menu-expand-icon {
     cursor: pointer;

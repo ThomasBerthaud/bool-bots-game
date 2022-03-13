@@ -10,11 +10,26 @@ export const UIControls: React.VFC = () => {
     const dispatch = useAppDispatch();
 
     const icon = !playing ? (
-        <Icon icon={faPlay} className="controls-icon play fa-2xl" onClick={() => dispatch(startArena())} />
+        <Icon
+            icon={faPlay}
+            title="Battle!"
+            className="controls-icon play fa-2xl"
+            onClick={() => dispatch(startArena())}
+        />
     ) : (
         <>
-            <Icon icon={faPause} className="controls-icon pause fa-2xl" onClick={() => dispatch(pauseArena())} />
-            <Icon icon={faStop} className="controls-icon stop fa-2xl" onClick={() => dispatch(stopArena())} />
+            <Icon
+                icon={faPause}
+                title="Pause"
+                className="controls-icon pause fa-2xl"
+                onClick={() => dispatch(pauseArena())}
+            />
+            <Icon
+                icon={faStop}
+                title="Stop"
+                className="controls-icon stop fa-2xl"
+                onClick={() => dispatch(stopArena())}
+            />
         </>
     );
 

@@ -1,14 +1,34 @@
-body {
-    --white: rgb(255, 255, 255);
-    --primary: #3d5afe; /* color: white */
-    --primary-dark: #304ffe; /* color: white */
-    --primary-light: #536dfe; /* color: black */
-    --secondary: #616161;
-    --secondary-dark: #424242;
-    --secondary-light: #757575;
+@import "md-color-palette.css";
 
-    --text-primary: #263238;
-    --background: #eceff1;
+:root {
+    --box-shadow-1: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --box-shadow-2: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    --box-shadow-3: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    --box-shadow-4: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    --box-shadow-5: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --box-shadow-6: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    --box-shadow-7: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+/* DESIGN SYSTEM VARIABLES */
+:root {
+    --white: rgb(255, 255, 255);
+    --primary-light: var(--material-color-indigo-a200); /* color: black */
+    --primary: var(--material-color-indigo-a400); /* color: white */
+    --primary-dark: var(--material-color-indigo-a700); /* color: white */
+    --secondary-light: var(--material-color-grey-600);
+    --secondary: var(--material-color-grey-700);
+    --secondary-dark: var(--material-color-grey-800);
+    --play: var(--material-color-green-a400);
+    --pause: var(--material-color-green-a400);
+    --stop: var(--material-color-red-a400);
+    --leaderboard:var(--material-color-amber-a400);
+    --configuration: var(--material-color-grey-500);
+    --panel-border: var(--material-color-grey-400);
+    --error: var(--material-color-red);
+
+    --text-primary: var(--material-color-blue-grey-900);
+    --background: var(--material-color-blue-grey-50);
 
     --spacing-sm: 0.75rem;
     --spacing: 1rem;
@@ -18,9 +38,7 @@ body {
     --border-radius: 0.5rem;
     --border-radius-lg: 0.75rem;
 
-    --play: #00e676; /* green A400 */
-    --pause: #00e676;
-    --stop: #e61c00;
-    --leaderboard: #ffc400; /* Amber A400 */
-    --configuration: #9e9e9e; /* Grey 500 */
+    --box-shadow-sm: var(--box-shadow-2);
+    --box-shadow: var(--box-shadow-4);
+    --box-shadow-lg: var(--box-shadow-6);
 }
