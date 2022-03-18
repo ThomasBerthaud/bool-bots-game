@@ -3,9 +3,9 @@ import "./UIBotPanel.css";
 import { useAppDispatch } from "../../redux/hooks";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { deleteBot, setBotConfiguration } from "../../redux/ArenaSlice";
-import { BotConfigurationEntity } from "../../domain/arena/bot/BotConfigurationEntity";
+import { BotConfigurationEntity } from "../../domain/arena/BotConfigurationEntity";
 import { Icon } from "./Icon";
-import { BotConfigurationModel, BotDirection, BotOperation } from "../../domain/arena/bot/BotConfigurationModel";
+import { BotConfigurationModel, BotDirection, BotOperation } from "../../domain/arena/BotConfigurationModel";
 import { enumKeys } from "../../utils/enumKeys";
 
 export type BotPanelProps = {

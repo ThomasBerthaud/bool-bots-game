@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { faPause, faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 import { pauseArena, startArena, stopArena } from "../redux/ArenaSlice";
 import { Icon } from "./components/Icon";
-import { areBotsValid } from "../domain/arena/bot/BotConfigurationEntity";
+import { areBotsValid } from "../domain/arena/BotConfigurationEntity";
 
 export const UIControls: React.VFC = () => {
     const { running, bots } = useAppSelector((state) => state.arena);
