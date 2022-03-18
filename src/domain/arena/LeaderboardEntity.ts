@@ -2,13 +2,13 @@ import { BotConfigurationEntity } from "./BotConfigurationEntity";
 
 export interface LeaderboardEntity {
     id: number;
-    name: string;
+    name?: string;
     win: number;
     loss: number;
 }
 
 export function initBotScore(bot: BotConfigurationEntity): LeaderboardEntity {
-    return { id: bot.id, name: bot.name ?? "", loss: 0, win: 0 };
+    return { id: bot.id, name: bot.name, loss: 0, win: 0 };
 }
 
 export function sortByWin(a: LeaderboardEntity, b: LeaderboardEntity): number {
