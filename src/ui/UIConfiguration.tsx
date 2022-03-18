@@ -5,7 +5,7 @@ import { UIBotPanel } from "./components/UIBotPanel";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { addBot } from "../redux/ArenaSlice";
-import { checkHasSameName, has2BotsWithSameName } from "../domain/arena/bot/BotConfigurationEntity";
+import { checkHasSameName, has2BotsWithSameName } from "../domain/arena/BotConfigurationEntity";
 
 export const UIConfiguration: React.VFC = () => {
     const bots = useAppSelector((state) => state.arena.bots);

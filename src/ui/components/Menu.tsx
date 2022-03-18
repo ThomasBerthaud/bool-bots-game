@@ -10,10 +10,11 @@ export type MenuProps = {
     icon: IconDefinition;
     iconTitle?: string;
     position?: "left" | "right";
+    contentStyle?: React.CSSProperties;
     children: ReactNode;
 } & HTMLProps<HTMLDivElement>;
 
-export const Menu: React.VFC<MenuProps> = ({ icon, iconTitle, position, children, ...props }) => {
+export const Menu: React.VFC<MenuProps> = ({ icon, iconTitle, position, contentStyle, children, ...props }) => {
     const openMenuId = useAppSelector((state) => state.menu.openedMenu);
     const dispatch = useAppDispatch();
     const menuId = useRef(Date.now().toString());
@@ -36,7 +37,7 @@ export const Menu: React.VFC<MenuProps> = ({ icon, iconTitle, position, children
     };
 
     const content = isMenuOpen() ? (
-        <div className="menu" style={positionStyle}>
+        <div className="menu" style={{ ...positionStyle, ...contentStyle }}>
             <Icon
                 icon={faXmark}
                 title="Close"

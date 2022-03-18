@@ -1,15 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { startingBots } from "../data/startingBots";
-import { BotConfigurationEntity } from "../domain/arena/bot/BotConfigurationEntity";
+import { BotConfigurationEntity } from "../domain/arena/BotConfigurationEntity";
+import { initBotScore, LeaderboardEntity, sortByWin } from "../domain/arena/LeaderboardEntity";
+import { updateCollectionValue } from "./utils";
 
 export interface ArenaState {
     running: boolean;
     bots: BotConfigurationEntity[];
+    leaderboard: LeaderboardEntity[];
 }
 
 const initialState: ArenaState = {
     running: false,
     bots: startingBots,
+    leaderboard: startingBots.map(initBotScore),
+};
+
+let botIdentifier = startingBots.length;
+export const nextIdentifier = () => {
+    return botIdentifier++;
 };
 
 export const arenaSlice = createSlice({
@@ -29,19 +38,31 @@ export const arenaSlice = createSlice({
         },
         addBot: (state) => {
             const newBot: BotConfigurationEntity = {
-                id: state.bots.length,
+                id: nextIdentifier(),
                 name: "",
                 speed: 1,
                 booleanValue: false,
             };
             state.bots.push(newBot);
+            state.leaderboard.push(initBotScore(newBot));
         },
         setBotConfiguration: (state, { payload }: PayloadAction<BotConfigurationEntity>) => {
-            state.bots[payload.id] = { ...state.bots[payload.id], ...payload };
+            const botIndex = state.bots.findIndex((bot) => bot.id === payload.id);
+            updateCollectionValue(state, "bots", botIndex, payload);
+
+            const leaderboardIndex = state.leaderboard.findIndex((bot) => payload.id === bot.id);
+            if (leaderboardIndex !== -1) {
+                updateCollectionValue(state, "leaderboard", leaderboardIndex, { name: payload.name });
+            } else {
+                state.leaderboard.push(initBotScore(payload));
+            }
+            state.leaderboard.sort(sortByWin);
         },
         deleteBot: (state, { payload }: PayloadAction<number>) => {
             const botIndex = state.bots.findIndex((bot) => bot.id === payload);
+            const leaderboardIndex = state.leaderboard.findIndex((bot) => payload === bot.id);
             state.bots.splice(botIndex, 1);
+            state.leaderboard.splice(leaderboardIndex, 1);
         },
     },
 });

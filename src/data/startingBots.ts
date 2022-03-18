@@ -1,4 +1,4 @@
-import { BotConfigurationModel, BotDirection, BotOperation } from "../domain/arena/bot/BotConfigurationModel";
+import { BotConfigurationModel, BotDirection, BotOperation } from "../domain/arena/BotConfigurationModel";
 
 export const startingBots: BotConfigurationModel[] = [
     {

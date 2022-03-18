@@ -1,3 +1,28 @@
-.leaderboard-menu .menu-expand-icon:hover, .leaderboard-menu.active .menu-expand-icon {
+.leaderboard-menu .menu-expand-icon:hover,
+.leaderboard-menu.active .menu-expand-icon {
     color: var(--leaderboard);
+}
+
+.leaderboard-menu h2 {
+    margin-bottom: var(--spacing);
+}
+
+.leaderboard-menu .index,
+.leaderboard-menu .name {
+    font-size: 1.25rem;
+}
+.leaderboard-menu .name {
+    font-weight: bold;
+    padding-right: var(--spacing);
+}
+
+.leaderboard-menu .win,
+.leaderboard-menu .loss {
+    padding: 0 var(--spacing-sm);
+}
+.leaderboard-menu .win {
+    color: var(--win);
+}
+.leaderboard-menu .loss {
+    color: var(--loss);
 }

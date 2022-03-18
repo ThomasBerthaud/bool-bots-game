@@ -87,7 +87,7 @@ continue moving about the arena until only one remains.
 
 ### Leaderboard
 
--   [ ] User can see the display of wins and losses for each bot on the
+-   [X] User can see the display of wins and losses for each bot on the
         leaderboard
 -   [ ] User can see the tally of wins incremented for bots winning a collision.
 -   [ ] User can see the tally of losses decremented for bots loosing a collision.
