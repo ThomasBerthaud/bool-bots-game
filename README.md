@@ -17,6 +17,8 @@ implementation of an app idea from [app-ideas](https://github.com/florinpop17/ap
 -   build project: `npm run build`
 -   open in a web browser **dist/index.html**
 
+## Specifications
+
 **Tier:** 3-Advanced
 
 Boole Bots is a game that is not only fun, but also an aid in helping to
@@ -35,7 +37,7 @@ continue moving about the arena until only one remains.
 
 ## User Stories
 
--   [X] User can see the game window with these components
+-   [x] User can see the game window with these components
     -   Game configuration input panel
     -   Leaderboard showing bots ranked by their scores
     -   Game controls
@@ -43,30 +45,30 @@ continue moving about the arena until only one remains.
 
 ### Game Configuration Panel
 
--   [X] User can see a game configuration panel with these subcomponents:
+-   [x] User can see a game configuration panel with these subcomponents:
     -   Four bot panels with controls to allow the user to input a unique bot
         name, select its Boolean value and operation, select the bots speed using a
         slider, and a dropdown to specify its starting direction - North, South,
         East, West
--   [X] User can enter a unique name for each bot into an input text box
--   [X] User can see an error message if the name entered is the same name
+-   [x] User can enter a unique name for each bot into an input text box
+-   [x] User can see an error message if the name entered is the same name
         assigned to another bot.
--   [X] User can select the bots Boolean value (0 or 1) from a dropdown.
--   [X] User can select a bots Boolean operation from a dropdown - AND, OR, XOR,
+-   [x] User can select the bots Boolean value (0 or 1) from a dropdown.
+-   [x] User can select a bots Boolean operation from a dropdown - AND, OR, XOR,
         or NOT.
--   [X] User can move the speed slider to set a bots speed
--   [X] User can select a bots starting direction from the direction dropdown.
+-   [x] User can move the speed slider to set a bots speed
+-   [x] User can select a bots starting direction from the direction dropdown.
 -   [ ] User can see the bot randomly assigned to a tile in the arena once its
         name has been defined.
 
 ### Game Controls
 
--   [X] User can see a button in the game control panel to 'Battle!'
--   [X] User can click the 'Battle!' button to start the bot battle in the arena.
+-   [x] User can see a button in the game control panel to 'Battle!'
+-   [x] User can click the 'Battle!' button to start the bot battle in the arena.
 -   [ ] User can see bots move based on the speed and direction assigned to them.
--   [X] User can see the 'Battle!' button text change to 'Stop!' once a battle
+-   [x] User can see the 'Battle!' button text change to 'Stop!' once a battle
         is started.
--   [X] User can click the 'Stop!' button to halt gameplay
+-   [x] User can click the 'Stop!' button to halt gameplay
 -   [ ] User can see the 'Stop!' button text change back to 'Battle!' once a
         single bot wins the match.
 
@@ -87,7 +89,7 @@ continue moving about the arena until only one remains.
 
 ### Leaderboard
 
--   [X] User can see the display of wins and losses for each bot on the
+-   [x] User can see the display of wins and losses for each bot on the
         leaderboard
 -   [ ] User can see the tally of wins incremented for bots winning a collision.
 -   [ ] User can see the tally of losses decremented for bots loosing a collision.
