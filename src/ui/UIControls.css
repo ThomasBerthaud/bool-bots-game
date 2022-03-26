@@ -6,7 +6,7 @@
 
 .controls-icon {
     cursor: pointer;
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .controls-icon.play:hover {
