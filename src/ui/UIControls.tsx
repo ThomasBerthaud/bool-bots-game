@@ -5,6 +5,7 @@ import { faPause, faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 import { pauseArena, startArena, stopArena } from "../redux/ArenaSlice";
 import { Icon } from "./components/Icon";
 import { areBotsValid } from "../domain/arena/BotConfigurationEntity";
+import { Tooltip } from "./components/Tooltip";
 
 export const UIControls: React.VFC = () => {
     const { running, bots } = useAppSelector((state) => state.arena);
@@ -38,5 +39,11 @@ export const UIControls: React.VFC = () => {
         </>
     );
 
-    return <div className="controls-container">{icon}</div>;
+    return (
+        <div className="controls-container">
+            <Tooltip direction="bottom" text="Something is wrong with your bot configurations !" disabled={isValid}>
+                {icon}
+            </Tooltip>
+        </div>
+    );
 };
