@@ -5,7 +5,7 @@ import { UIBotPanel } from "./components/UIBotPanel";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { addBot } from "../redux/ArenaSlice";
-import { checkHasSameName, has2BotsWithSameName } from "../domain/arena/BotConfigurationEntity";
+import { areBotsValid, checkHasSameName, has2BotsWithSameName } from "../domain/arena/BotConfigurationEntity";
 
 export const UIConfiguration: React.VFC = () => {
     const bots = useAppSelector((state) => state.arena.bots);
@@ -15,8 +15,15 @@ export const UIConfiguration: React.VFC = () => {
         <UIBotPanel key={bot.id} bot={bot} hasSameNameError={checkHasSameName(bots, bot)} />
     ));
 
+    const hasErrorsClasName = !areBotsValid(bots) ? "has-errors" : "";
+
     return (
-        <Menu icon={faGear} iconTitle="Configuration" className="configuration-menu" position="left">
+        <Menu
+            icon={faGear}
+            iconTitle="Configuration"
+            className={`configuration-menu ${hasErrorsClasName}`}
+            position="left"
+        >
             <h2 className="text-center">Bots Configuration</h2>
             {has2BotsWithSameName(bots) && (
                 <div className="name-error">Sorry two bots can&apos;t have the same name</div>
