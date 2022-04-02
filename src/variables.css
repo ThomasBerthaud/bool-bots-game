@@ -24,7 +24,7 @@
     --play: var(--material-color-green-a400);
     --pause: var(--material-color-green-a400);
     --stop: var(--material-color-red-a400);
-    --leaderboard:var(--material-color-amber-a400);
+    --leaderboard: var(--material-color-amber-a400);
     --configuration: var(--material-color-deep-purple-a400);
     --panel-border: var(--material-color-grey-400);
     --error: var(--material-color-red);
