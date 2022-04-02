@@ -1,6 +1,6 @@
 import "./UIConfiguration.css";
 import React from "react";
-import { Menu } from "./components/Menu";
+import { UIMenu } from "./components/UIMenu";
 import { UIBotPanel } from "./components/UIBotPanel";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
@@ -18,7 +18,7 @@ export const UIConfiguration: React.VFC = () => {
     const hasErrorsClasName = !areBotsValid(bots) ? "has-errors" : "";
 
     return (
-        <Menu
+        <UIMenu
             icon={faGear}
             iconTitle="Configuration"
             className={`configuration-menu ${hasErrorsClasName}`}
@@ -32,6 +32,6 @@ export const UIConfiguration: React.VFC = () => {
             <button onClick={() => dispatch(addBot())} className="btn primary">
                 Add a bot
             </button>
-        </Menu>
+        </UIMenu>
     );
 };

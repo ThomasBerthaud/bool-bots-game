@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { deleteBot, setBotConfiguration } from "../../redux/ArenaSlice";
 import { BotConfigurationEntity } from "../../domain/arena/BotConfigurationEntity";
-import { Icon } from "./Icon";
+import { UIIcon } from "./UIIcon";
 import { BotConfigurationModel, BotDirection, BotOperation } from "../../domain/arena/BotConfigurationModel";
 import { enumKeys } from "../../utils/enumKeys";
 
@@ -14,6 +14,7 @@ export type BotPanelProps = {
 };
 
 export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) => {
+    // TODO don't use state, use a callback instead. UIBotPanel should not depend on redux store
     const dispatch = useAppDispatch();
 
     const dispatchConfigUpdate = (config: Partial<BotConfigurationModel>) => {
@@ -33,7 +34,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
 
     return (
         <div className="bot-panel">
-            <Icon icon={faXmark} title="Delete bot" className="fa-lg" onClick={() => dispatch(deleteBot(bot.id))} />
+            <UIIcon icon={faXmark} title="Delete bot" className="fa-lg" onClick={() => dispatch(deleteBot(bot.id))} />
             <h3>Bot n°{bot.id + 1}</h3>
             <form>
                 <label htmlFor="name" className={hasSameNameError || !bot.name ? "error" : ""}>
