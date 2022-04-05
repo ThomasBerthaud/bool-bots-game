@@ -41,7 +41,7 @@ export const UIControls: React.VFC = () => {
 
     return (
         <div className="controls-container">
-            <UITooltip direction="bottom" text="Something is wrong with your bot configurations !" disabled={isValid}>
+            <UITooltip direction="bottom" label="Something is wrong with your bot configurations !" disabled={isValid}>
                 {icon}
             </UITooltip>
         </div>

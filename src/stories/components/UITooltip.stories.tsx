@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof UITooltip> = (args) => <UITooltip {...args
 
 export const Top = Template.bind({});
 Top.args = {
-    text: "this is a tooltip",
+    label: "this is a tooltip",
     direction: "top",
     children: <p>This is a text with a tooltip</p>,
 };
