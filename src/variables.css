@@ -37,8 +37,8 @@
     --spacing-lg: 1.25rem;
 
     --border-radius-sm: 0.25rem;
-    --border-radius: 0.5rem;
-    --border-radius-lg: 0.75rem;
+    --border-radius: 0.3rem;
+    --border-radius-lg: 0.7rem;
 
     --box-shadow-sm: var(--box-shadow-2);
     --box-shadow: var(--box-shadow-4);

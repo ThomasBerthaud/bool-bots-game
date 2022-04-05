@@ -1,34 +1,23 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import React, { ReactNode } from "react";
+import React, { useState } from "react";
 import { UIBotPanel } from "../ui/components/UIBotPanel";
 import { startingBots } from "../data/startingBots";
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import arenaReducer from "../redux/ArenaSlice";
-
-const MockStore = ({ children }: { children: ReactNode }) => {
-    return (
-        <Provider
-            store={configureStore({
-                reducer: {
-                    arena: arenaReducer,
-                },
-            })}
-        >
-            {children}
-        </Provider>
-    );
-};
+import { BotConfigurationEntity } from "../domain/arena/BotConfigurationEntity";
 
 export default {
     title: "BotPanel",
     component: UIBotPanel,
-    decorators: [(story) => <MockStore>{story()}</MockStore>],
 } as ComponentMeta<typeof UIBotPanel>;
 
-const Template: ComponentStory<typeof UIBotPanel> = (args) => <UIBotPanel {...args} />;
+const defaultBot = { ...startingBots[0] };
+const Template: ComponentStory<typeof UIBotPanel> = (args) => {
+    const [bot, setBot] = useState(defaultBot);
+    const onUpdate = (config: BotConfigurationEntity) => {
+        setBot({ ...bot, ...config });
+        args.onUpdate(config); // also call storybook's function
+    };
+    return <UIBotPanel {...args} bot={bot} onUpdate={onUpdate} />;
+};
 
 export const Default = Template.bind({});
-Default.args = {
-    bot: startingBots[0],
-};
+Default.args = {};

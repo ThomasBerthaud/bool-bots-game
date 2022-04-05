@@ -12,6 +12,7 @@ export const App: React.VFC = () => {
     return (
         <>
             <div className="game-options">
+                <div />
                 <UIControls />
                 <div className="game-configuration">
                     <UILeaderboard />
