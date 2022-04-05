@@ -1,18 +1,18 @@
 import React, { ReactNode } from "react";
-import "./Tooltip.css";
+import "./UITooltip.css";
 
 type TooltipProps = {
     direction?: "top" | "right" | "bottom" | "left";
-    text: string;
+    label: string;
     disabled?: boolean;
     children?: ReactNode;
 };
 
-export const Tooltip: React.VFC<TooltipProps> = ({ direction, text, disabled, children }) => {
+export const UITooltip: React.VFC<TooltipProps> = ({ direction, label, disabled, children }) => {
     const disabledClassName = disabled ? "disabled" : "";
     return (
         <div className={["tooltip", direction ?? "top", disabledClassName].join(" ")}>
-            <span className="tooltip-content">{text}</span>
+            <span className="tooltip-content">{label}</span>
             {children}
         </div>
     );

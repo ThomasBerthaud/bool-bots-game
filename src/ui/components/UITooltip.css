@@ -12,8 +12,8 @@
     position: absolute;
     white-space: nowrap;
     text-align: center;
-    background-color: var(--white);
-    color: var(--text-primary);
+    background-color: var(--text-primary);
+    color: var(--white);
     border-radius: var(--border-radius-sm);
     padding: var(--spacing-sm);
 }
@@ -49,28 +49,28 @@
     left: 50%;
     transform: translateX(-50%);
     border-width: 0 var(--caret-size) var(--caret-size);
-    border-bottom-color: var(--white);
+    border-bottom-color: var(--text-primary);
 }
 .tooltip.top .tooltip-content::before {
     bottom: calc(-1 * var(--caret-size));
     left: 50%;
     transform: translateX(-50%);
     border-width: var(--caret-size) var(--caret-size) 0;
-    border-top-color: var(--white);
+    border-top-color: var(--text-primary);
 }
 .tooltip.left .tooltip-content::before {
     right: calc(-1 * var(--caret-size));
     top: 50%;
     transform: translateY(-50%);
     border-width: var(--caret-size) 0 var(--caret-size) var(--caret-size);
-    border-left-color: var(--white);
+    border-left-color: var(--text-primary);
 }
 .tooltip.right .tooltip-content::before {
     left: calc(-1 * var(--caret-size));
     top: 50%;
     transform: translateY(-50%);
     border-width: var(--caret-size) var(--caret-size) var(--caret-size) 0;
-    border-right-color: var(--white);
+    border-right-color: var(--text-primary);
 }
 
 .tooltip:hover .tooltip-content {

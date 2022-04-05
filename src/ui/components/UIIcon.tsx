@@ -4,13 +4,16 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 type IconProps = {
     icon: IconProp;
+    color?: string;
     onClick?: (event: React.MouseEvent<SVGSVGElement> | React.KeyboardEvent<SVGSVGElement>) => void;
 } & Omit<FontAwesomeIconProps, "focusable" | "aria-hidden" | "tabIndex" | "onClick" | "onKeyPress">;
 
-export const Icon: React.VFC<IconProps> = ({ onClick, ...props }) => {
+export const UIIcon: React.VFC<IconProps> = ({ icon, color, onClick, ...props }) => {
     return (
         <FontAwesomeIcon
             {...props}
+            icon={icon}
+            color={color}
             focusable={props["aria-disabled"]}
             aria-hidden={"false"}
             tabIndex={0}

@@ -1,23 +1,21 @@
 import React from "react";
 import "./UIBotPanel.css";
-import { useAppDispatch } from "../../redux/hooks";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { deleteBot, setBotConfiguration } from "../../redux/ArenaSlice";
 import { BotConfigurationEntity } from "../../domain/arena/BotConfigurationEntity";
-import { Icon } from "./Icon";
+import { UIIcon } from "./UIIcon";
 import { BotConfigurationModel, BotDirection, BotOperation } from "../../domain/arena/BotConfigurationModel";
 import { enumKeys } from "../../utils/enumKeys";
 
 export type BotPanelProps = {
     bot: BotConfigurationEntity;
     hasSameNameError: boolean;
+    onUpdate: (botConfiguration: BotConfigurationEntity) => void;
+    onDelete: (botId: number) => void;
 };
 
-export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) => {
-    const dispatch = useAppDispatch();
-
-    const dispatchConfigUpdate = (config: Partial<BotConfigurationModel>) => {
-        dispatch(setBotConfiguration({ id: bot.id, ...config }));
+export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError, onUpdate, onDelete }) => {
+    const onConfigUpdate = (config: Partial<BotConfigurationModel>) => {
+        onUpdate({ id: bot.id, ...config });
     };
 
     const operationOptions = enumKeys(BotOperation).map((operation) => (
@@ -33,7 +31,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
 
     return (
         <div className="bot-panel">
-            <Icon icon={faXmark} title="Delete bot" className="fa-lg" onClick={() => dispatch(deleteBot(bot.id))} />
+            <UIIcon icon={faXmark} title="Delete bot" className="fa-lg" onClick={() => onDelete(bot.id)} />
             <h3>Bot n°{bot.id + 1}</h3>
             <form>
                 <label htmlFor="name" className={hasSameNameError || !bot.name ? "error" : ""}>
@@ -43,7 +41,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
                             type="text"
                             name="name"
                             value={bot.name}
-                            onChange={(event) => dispatchConfigUpdate({ name: event.target.value })}
+                            onChange={(event) => onConfigUpdate({ name: event.target.value })}
                         />
                         {!bot.name && <span>You need to provide a name</span>}
                     </div>
@@ -54,7 +52,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
                         type="checkbox"
                         name="boolean-value"
                         checked={bot.booleanValue}
-                        onChange={(event) => dispatchConfigUpdate({ booleanValue: event.target.checked })}
+                        onChange={(event) => onConfigUpdate({ booleanValue: event.target.checked })}
                     />
                 </label>
                 <label htmlFor="speed">
@@ -65,7 +63,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
                         value={bot.speed}
                         min="1"
                         max="5"
-                        onChange={(event) => dispatchConfigUpdate({ speed: Number(event.target.value) })}
+                        onChange={(event) => onConfigUpdate({ speed: Number(event.target.value) })}
                     />
                 </label>
                 <label htmlFor="operation">
@@ -74,7 +72,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
                         name="operation"
                         id="operation"
                         value={bot.operation}
-                        onChange={(event) => dispatchConfigUpdate({ operation: event.target.value as BotOperation })}
+                        onChange={(event) => onConfigUpdate({ operation: event.target.value as BotOperation })}
                     >
                         <option value="">Choose</option>
                         {operationOptions}
@@ -86,7 +84,7 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError }) 
                         name="direction"
                         id="direction"
                         value={bot.direction}
-                        onChange={(event) => dispatchConfigUpdate({ direction: event.target.value as BotDirection })}
+                        onChange={(event) => onConfigUpdate({ direction: event.target.value as BotDirection })}
                     >
                         <option value="">Choose</option>
                         {directionOptions}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./UILeaderboard.css";
 import { faCross, faCrosshairs, faTrophy } from "@fortawesome/free-solid-svg-icons";
-import { Menu } from "./components/Menu";
+import { UIMenu } from "./components/UIMenu";
 import { useAppSelector } from "../redux/hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -21,7 +21,7 @@ export const UILeaderboard: React.VFC = () => {
         </tr>
     ));
     return (
-        <Menu
+        <UIMenu
             icon={faTrophy}
             iconTitle="Leaderboard"
             className="leaderboard-menu"
@@ -32,6 +32,6 @@ export const UILeaderboard: React.VFC = () => {
             <table>
                 <tbody>{leaderboardTable}</tbody>
             </table>
-        </Menu>
+        </UIMenu>
     );
 };

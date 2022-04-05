@@ -28,6 +28,8 @@ code {
 }
 
 /* DESIGN SYSTEM */
+
+/*TODO move everything in UIButton.css*/
 .btn {
     cursor: pointer;
     border-radius: var(--border-radius-sm);
@@ -36,18 +38,26 @@ code {
     outline: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
         box-shadow 0.15s ease-in-out;
+    font-size: 1rem;
+    font-weight: bold;
 }
-.btn.btn-lg {
+.btn.large {
     border-radius: var(--border-radius);
     padding: var(--spacing);
     font-size: 1.25rem;
+}
+
+/*en faire des variables */
+.btn.small {
+    font-size: 0.75rem;
+    padding: 0.6rem;
+    border-radius: 0.2rem;
 }
 
 .btn.primary {
     color: var(--white);
     background-color: var(--primary);
     border-color: var(--primary);
-    font-weight: bold;
 }
 .btn.primary:hover {
     background-color: var(--primary-dark);
@@ -60,6 +70,7 @@ code {
     box-shadow: var(--background) 0px 0px 0px 2px, var(--primary-dark) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
 }
 
+/*TODO remove outline ?*/
 .btn.primary.outline {
     color: var(--primary);
     background-color: transparent;

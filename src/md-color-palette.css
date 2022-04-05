@@ -117,7 +117,7 @@
     --material-color-cyan-200: #80deea;
     --material-color-cyan-300: #4dd0e1;
     --material-color-cyan-400: #26c6da;
-    --material-color-cyan-500: var(--material-color-cyan) ;
+    --material-color-cyan-500: var(--material-color-cyan);
     --material-color-cyan-600: #00acc1;
     --material-color-cyan-700: #0097a7;
     --material-color-cyan-800: #00838f;
