@@ -46,6 +46,8 @@ code {
     padding: var(--spacing);
     font-size: 1.25rem;
 }
+
+/*en faire des variables */
 .btn.small {
     font-size: 0.75rem;
     padding: 0.6rem;
