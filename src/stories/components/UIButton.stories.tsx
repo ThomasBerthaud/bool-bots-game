@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import "../index.css";
-import { UIButton } from "../ui/components/UIButton";
+import "../../index.css";
+import { UIButton } from "../../ui/components/UIButton";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "UIButton",
+    title: "Components/UIButton",
     component: UIButton,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

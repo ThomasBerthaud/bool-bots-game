@@ -1,9 +1,9 @@
-import { UITooltip } from "../ui/components/UITooltip";
+import { UITooltip } from "../../ui/components/UITooltip";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import "../index.css";
+import "../../index.css";
 
 export default {
-    title: "Tooltip",
+    title: "Components/Tooltip",
     component: UITooltip,
     parameters: {
         layout: "centered",

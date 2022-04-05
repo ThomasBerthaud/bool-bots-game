@@ -1,11 +1,11 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React, { useState } from "react";
-import { UIBotPanel } from "../ui/components/UIBotPanel";
-import { startingBots } from "../data/startingBots";
-import { BotConfigurationEntity } from "../domain/arena/BotConfigurationEntity";
+import { UIBotPanel } from "../../ui/components/UIBotPanel";
+import { startingBots } from "../../data/startingBots";
+import { BotConfigurationEntity } from "../../domain/arena/BotConfigurationEntity";
 
 export default {
-    title: "BotPanel",
+    title: "Components/BotPanel",
     component: UIBotPanel,
 } as ComponentMeta<typeof UIBotPanel>;
 

@@ -1,10 +1,10 @@
-import { UIIcon } from "../ui/components/UIIcon";
+import { UIIcon } from "../../ui/components/UIIcon";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import { faPlus, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default {
-    title: "Icon",
+    title: "Components/Icon",
     component: UIIcon,
     argTypes: {
         icon: {

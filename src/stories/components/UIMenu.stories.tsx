@@ -1,8 +1,8 @@
-import { UIMenu } from "../ui/components/UIMenu";
+import { UIMenu } from "../../ui/components/UIMenu";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from "../redux/MenuSlice";
+import menuReducer from "../../redux/MenuSlice";
 import { Provider } from "react-redux";
 import { ReactNode } from "react";
 
@@ -21,7 +21,7 @@ const MockStore = ({ children }: { children: ReactNode }) => {
 };
 
 export default {
-    title: "Menu",
+    title: "Components/Menu",
     component: UIMenu,
     parameters: {
         layout: "centered",
