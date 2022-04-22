@@ -1,10 +1,13 @@
-import "./UIMenu.css";
-import React, { CSSProperties, HTMLProps, ReactNode, useRef } from "react";
+import styles from "./UIMenu.module.css";
+import React, { CSSProperties, ReactNode, useRef } from "react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { closeMenu, openMenu } from "../../redux/MenuSlice";
 import { UIIcon } from "./UIIcon";
+import classNames from "classnames";
+import { onClickOutside } from "../../utils/onClickOutside";
+import { store } from "../../redux/store";
 
 export type MenuProps = {
     icon: IconDefinition;
@@ -13,23 +16,16 @@ export type MenuProps = {
     position?: "left" | "right";
     contentStyle?: React.CSSProperties;
     children: ReactNode;
-} & HTMLProps<HTMLDivElement>;
+};
 
-export const UIMenu: React.VFC<MenuProps> = ({
-    icon,
-    iconColor,
-    iconTitle,
-    position,
-    contentStyle,
-    children,
-    ...props
-}) => {
+onClickOutside(document, `.${styles.menuContainer}`, () => store.dispatch(closeMenu()));
+
+export const UIMenu: React.VFC<MenuProps> = ({ icon, iconColor, iconTitle, position, contentStyle, children }) => {
     const openMenuId = useAppSelector((state) => state.menu.openedMenu);
     const dispatch = useAppDispatch();
     const menuId = useRef(Date.now().toString());
 
     const isMenuOpen = () => menuId.current === openMenuId;
-    const menuClass = isMenuOpen() ? "active menu-container" : "menu-container";
 
     let positionStyle: CSSProperties;
     switch (position) {
@@ -46,11 +42,11 @@ export const UIMenu: React.VFC<MenuProps> = ({
     };
 
     const content = isMenuOpen() ? (
-        <div className="menu" style={{ ...positionStyle, ...contentStyle }}>
+        <div className={styles.menu} style={{ ...positionStyle, ...contentStyle }}>
             <UIIcon
                 icon={faXmark}
                 title="Close"
-                className="menu-close-icon fa-2xl"
+                className={classNames([styles.menuCloseIcon, "fa-2xl"])}
                 onClick={() => dispatch(closeMenu())}
             />
             {children}
@@ -58,12 +54,12 @@ export const UIMenu: React.VFC<MenuProps> = ({
     ) : null;
 
     return (
-        <div {...props} className={[menuClass, props.className].join(" ")}>
+        <div className={styles.menuContainer}>
             <UIIcon
                 icon={icon}
                 color={iconColor}
                 title={iconTitle}
-                className="menu-expand-icon fa-2xl"
+                className={classNames([styles.menuExpandIcon, "fa-2xl"])}
                 onClick={toggleMenu}
             />
             {content}

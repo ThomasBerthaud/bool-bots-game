@@ -1,28 +1,32 @@
+/*// TODO fix color of UIMenu icons*/
 .leaderboard-menu .menu-expand-icon:hover,
 .leaderboard-menu.active .menu-expand-icon {
     color: var(--leaderboard);
 }
 
-.leaderboard-menu h2 {
+.title {
     margin-bottom: var(--spacing);
 }
 
-.leaderboard-menu .index,
-.leaderboard-menu .name {
+.index,
+.name {
     font-size: 1.25rem;
 }
-.leaderboard-menu .name {
+
+.name {
     font-weight: bold;
     padding-right: var(--spacing);
 }
 
-.leaderboard-menu .win,
-.leaderboard-menu .loss {
+.win,
+.loss {
     padding: 0 var(--spacing-sm);
 }
-.leaderboard-menu .win {
+
+.win {
     color: var(--win);
 }
-.leaderboard-menu .loss {
+
+.loss {
     color: var(--loss);
 }

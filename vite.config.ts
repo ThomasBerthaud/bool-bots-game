@@ -4,6 +4,11 @@ import analyze from "rollup-plugin-analyzer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    css: {
+        modules: {
+            localsConvention: "camelCase",
+        },
+    },
     build: {
         rollupOptions: {
             output: {

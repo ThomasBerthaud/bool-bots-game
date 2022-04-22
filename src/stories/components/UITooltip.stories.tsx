@@ -1,6 +1,5 @@
 import { UITooltip } from "../../ui/components/UITooltip";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import "../../index.css";
 
 export default {
     title: "Components/Tooltip",

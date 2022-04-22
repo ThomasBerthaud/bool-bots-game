@@ -1,5 +1,5 @@
 import React from "react";
-import "./UILeaderboard.css";
+import styles from "./UILeaderboard.module.css";
 import { faCross, faCrosshairs, faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { UIMenu } from "./components/UIMenu";
 import { useAppSelector } from "../redux/hooks";
@@ -10,25 +10,19 @@ export const UILeaderboard: React.VFC = () => {
 
     const leaderboardTable = leaderboard.map((bot, index) => (
         <tr key={bot.id}>
-            <td className="index">{index + 1}.</td>
-            <td className="name">{bot.name ?? "-"}</td>
-            <td className="win">
+            <td className={styles.index}>{index + 1}.</td>
+            <td className={styles.name}>{bot.name ?? "-"}</td>
+            <td className={styles.win}>
                 <FontAwesomeIcon icon={faCrosshairs} /> {bot.win}
             </td>
-            <td className="loss">
+            <td className={styles.loss}>
                 <FontAwesomeIcon icon={faCross} /> {bot.loss}
             </td>
         </tr>
     ));
     return (
-        <UIMenu
-            icon={faTrophy}
-            iconTitle="Leaderboard"
-            className="leaderboard-menu"
-            position="left"
-            contentStyle={{ width: "40vw" }}
-        >
-            <h2>LeaderBoard</h2>
+        <UIMenu icon={faTrophy} iconTitle="Leaderboard" position="left" contentStyle={{ width: "40vw" }}>
+            <h2 className={styles.title}>LeaderBoard</h2>
             <table>
                 <tbody>{leaderboardTable}</tbody>
             </table>

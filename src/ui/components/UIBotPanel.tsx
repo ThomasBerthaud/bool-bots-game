@@ -1,10 +1,11 @@
 import React from "react";
-import "./UIBotPanel.css";
+import styles from "./UIBotPanel.module.css";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { BotConfigurationEntity } from "../../domain/arena/BotConfigurationEntity";
 import { UIIcon } from "./UIIcon";
 import { BotConfigurationModel, BotDirection, BotOperation } from "../../domain/arena/BotConfigurationModel";
 import { enumKeys } from "../../utils/enumKeys";
+import classNames from "classnames";
 
 export type BotPanelProps = {
     bot: BotConfigurationEntity;
@@ -30,13 +31,13 @@ export const UIBotPanel: React.VFC<BotPanelProps> = ({ bot, hasSameNameError, on
     ));
 
     return (
-        <div className="bot-panel">
+        <div className={styles.botPanel}>
             <UIIcon icon={faXmark} title="Delete bot" className="fa-lg" onClick={() => onDelete(bot.id)} />
             <h3>Bot n°{bot.id + 1}</h3>
             <form>
-                <label htmlFor="name" className={hasSameNameError || !bot.name ? "error" : ""}>
+                <label htmlFor="name" className={classNames({ error: hasSameNameError || !bot.name })}>
                     Name:
-                    <div className="name-input">
+                    <div className={styles.nameInput}>
                         <input
                             type="text"
                             name="name"

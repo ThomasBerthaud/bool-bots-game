@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { UILeaderboard } from "./ui/UILeaderboard";
 import { UIControls } from "./ui/UIControls";
 import { UIConfiguration } from "./ui/UIConfiguration";
@@ -8,18 +8,16 @@ import { arenaRepository } from "./domain/arena/ArenaRepository";
 
 const arenaView = arenaRepository.getView();
 
-export const App: React.VFC = () => {
-    return (
-        <>
-            <div className="game-options">
-                <div />
-                <UIControls />
-                <div className="game-configuration">
-                    <UILeaderboard />
-                    <UIConfiguration />
-                </div>
+export const App: React.VFC = () => (
+    <>
+        <div className={styles.gameOptions}>
+            <div />
+            <UIControls />
+            <div className={styles.gameConfiguration}>
+                <UILeaderboard />
+                <UIConfiguration />
             </div>
-            <UIArena arenaView={arenaView} />
-        </>
-    );
-};
+        </div>
+        <UIArena arenaView={arenaView} />
+    </>
+);
