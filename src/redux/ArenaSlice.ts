@@ -26,14 +26,12 @@ export const arenaSlice = createSlice({
     initialState,
     reducers: {
         startArena: (state) => {
-            // TODO check for bots configuration validity
             state.running = true;
         },
         pauseArena: (state) => {
             state.running = false;
         },
         stopArena: (state) => {
-            // TODO reset arena
             state.running = false;
         },
         addBot: (state) => {

@@ -4,8 +4,8 @@
 .menu {
     padding: var(--spacing);
     color: var(--text-primary);
-    background: var(--background);
-    border: 1px solid var(--background);
+    background: var(--white);
+    border: 1px solid var(--text-primary);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     width: 66vw;

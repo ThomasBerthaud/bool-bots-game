@@ -65,7 +65,7 @@ continue moving about the arena until only one remains.
 
 -   [x] User can see a button in the game control panel to 'Battle!'
 -   [x] User can click the 'Battle!' button to start the bot battle in the arena.
--   [ ] User can see bots move based on the speed and direction assigned to them.
+-   [X] User can see bots move based on the speed and direction assigned to them.
 -   [x] User can see the 'Battle!' button text change to 'Stop!' once a battle
         is started.
 -   [x] User can click the 'Stop!' button to halt gameplay
