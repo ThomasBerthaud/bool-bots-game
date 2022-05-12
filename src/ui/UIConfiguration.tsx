@@ -40,6 +40,7 @@ export const UIConfiguration: React.VFC = () => {
     return (
         <UIMenu
             icon={faGear}
+            activeIconColor={"#651fff"}
             iconTitle="Configuration"
             className={`configuration-menu ${hasErrorsClasName}`}
             position="left"

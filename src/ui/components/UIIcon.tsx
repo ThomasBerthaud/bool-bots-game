@@ -18,7 +18,7 @@ export const UIIcon: React.VFC<IconProps> = ({ icon, color, onClick, ...props })
             aria-hidden={"false"}
             tabIndex={0}
             onClick={onClick}
-            onKeyPress={(event) => {
+            onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                     onClick && onClick(event);
                 }
