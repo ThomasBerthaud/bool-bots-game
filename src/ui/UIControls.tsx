@@ -42,12 +42,13 @@ export const UIControls: React.VFC = () => {
     const dispatch = useAppDispatch();
 
     const isValid = areBotsValid(bots);
+    const playIconStyle = isValid ? [iconStyle, playStyle] : disabledStyle;
 
     const icon = !running ? (
         <UIIcon
             icon={faPlay}
             title="Battle!"
-            css={isValid ? [iconStyle, playStyle] : disabledStyle}
+            css={playIconStyle}
             className={"fa-2xl"}
             onClick={() => isValid && dispatch(startArena())}
             aria-disabled={!isValid}
