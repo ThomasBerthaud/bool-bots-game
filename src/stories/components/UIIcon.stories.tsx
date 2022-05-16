@@ -1,7 +1,7 @@
 import { UIIcon } from "../../ui/components/UIIcon";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { faPlus, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCross, faPlus, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default {
     title: "Components/Icon",
@@ -26,8 +26,8 @@ WithTitle.args = {
     title: "This is a title",
 };
 
-export const Colored = Template.bind({});
-Colored.args = {
-    icon: faQuestionCircle,
-    color: "#651fff",
+export const Disabled = Template.bind({});
+Disabled.args = {
+    icon: faCross,
+    disabled: true,
 };

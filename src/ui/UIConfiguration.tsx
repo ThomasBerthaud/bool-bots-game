@@ -1,4 +1,4 @@
-import "./UIConfiguration.css";
+/** @jsxImportSource @emotion/react */
 import React from "react";
 import { UIMenu } from "./components/UIMenu";
 import { UIBotPanel } from "./components/UIBotPanel";
@@ -12,6 +12,22 @@ import {
     has2BotsWithSameName,
 } from "../domain/arena/BotConfigurationEntity";
 import { UIButton } from "./components/UIButton";
+import { css } from "@emotion/react";
+
+const nameErrorStyle = css`
+    color: var(--error);
+    margin-top: var(--spacing-lg);
+    font-weight: 700;
+`;
+
+const botsStyle = css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--spacing-sm);
+    margin: var(--spacing) 0;
+    max-height: calc(100vh - 240px);
+    overflow: auto;
+`;
 
 export const UIConfiguration: React.VFC = () => {
     const bots = useAppSelector((state) => state.arena.bots);
@@ -35,21 +51,17 @@ export const UIConfiguration: React.VFC = () => {
         />
     ));
 
-    const hasErrorsClasName = !areBotsValid(bots) ? "has-errors" : "";
-
     return (
         <UIMenu
             icon={faGear}
-            activeIconColor={"#651fff"}
+            iconColor={areBotsValid(bots) ? undefined : "#f44336"}
+            activeIconColor={areBotsValid(bots) ? "#651fff" : "#f44336"}
             iconTitle="Configuration"
-            className={`configuration-menu ${hasErrorsClasName}`}
             position="left"
         >
             <h2 className="text-center">Bots Configuration</h2>
-            {has2BotsWithSameName(bots) && (
-                <div className="name-error">Sorry two bots can&apos;t have the same name</div>
-            )}
-            <div className="bots">{botPanels}</div>
+            {has2BotsWithSameName(bots) && <div css={nameErrorStyle}>Sorry two bots can&apos;t have the same name</div>}
+            <div css={botsStyle}>{botPanels}</div>
             <UIButton type="primary" label="Add a bot" onClick={() => dispatch(addBot())} />
         </UIMenu>
     );
