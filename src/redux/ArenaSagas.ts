@@ -15,9 +15,9 @@ const arenaSagas: ForkEffect[] = [
         arenaRepository.reset();
     }),
     takeEvery([addBot.type, setBotConfiguration.type], function* (): Generator<Effect, void, ArenaState> {
-        const state = yield select((state: RootState) => state.arena);
-        if (areBotsValid(state.bots)) {
-            arenaRepository.setBots(state.bots);
+        const arena = yield select((state: RootState) => state.arena);
+        if (areBotsValid(arena.bots)) {
+            arenaRepository.setBots(arena.bots);
         }
     }),
 ];
