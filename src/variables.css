@@ -22,7 +22,7 @@
     --text-primary: var(--material-color-blue-grey-900);
     --background: var(--material-color-blue-grey-50);
     --play: var(--material-color-green-a400);
-    --pause: var(--material-color-green-a400);
+    --pause: var(--material-color-orange-a400);
     --stop: var(--material-color-red-a400);
     --leaderboard: var(--material-color-amber-a400);
     --configuration: var(--material-color-deep-purple-a400);

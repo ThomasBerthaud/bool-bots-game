@@ -35,12 +35,14 @@ export const Left = Template.bind({});
 Left.args = {
     icon: faPlusCircle,
     iconColor: "red",
+    activeIconColor: "blue",
     position: "left",
-    children: <p>This is the menu content</p>,
+    children: <p>This is the menu content on the left</p>,
 };
 
 export const Right = Template.bind({});
 Right.args = {
-    ...Left.args,
+    icon: faPlusCircle,
     position: "right",
+    children: <p>This is the menu content on the right</p>,
 };
