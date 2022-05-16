@@ -1,6 +1,6 @@
 # Boole Bots Game
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ThomasBerthaud_bool-bots-game&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ThomasBerthaud_bool-bots-game)
+[![SonarCloud analysis](https://github.com/ThomasBerthaud/bool-bots-game/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/ThomasBerthaud/bool-bots-game/actions/workflows/sonarcloud.yml)
 
 implementation of an app idea from [app-ideas](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/Boole-Bot-Game.md)
 
