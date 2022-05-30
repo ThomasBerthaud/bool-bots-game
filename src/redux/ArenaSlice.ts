@@ -6,12 +6,14 @@ import { updateCollectionValue } from "./utils";
 
 export interface ArenaState {
     running: boolean;
+    elapsedTime: number;
     bots: BotConfigurationEntity[];
     leaderboard: LeaderboardEntity[];
 }
 
 const initialState: ArenaState = {
     running: false,
+    elapsedTime: 0,
     bots: startingBots,
     leaderboard: startingBots.map(initBotScore),
 };
@@ -33,6 +35,9 @@ export const arenaSlice = createSlice({
         },
         stopArena: (state) => {
             state.running = false;
+        },
+        setElapsedTime: (state, { payload }: PayloadAction<number>) => {
+            state.elapsedTime = payload;
         },
         addBot: (state) => {
             const newBot: BotConfigurationEntity = {

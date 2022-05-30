@@ -7,6 +7,7 @@ import { UIIcon } from "./components/UIIcon";
 import { areBotsValid } from "../domain/arena/BotConfigurationEntity";
 import { UITooltip } from "./components/UITooltip";
 import { css } from "@emotion/react";
+import { formatTime } from "../utils/date";
 
 const containerStyle = css`
     display: flex;
@@ -38,7 +39,7 @@ const stopStyle = css`
 `;
 
 export const UIControls: React.VFC = () => {
-    const { running, bots } = useAppSelector((state) => state.arena);
+    const { running, elapsedTime, bots } = useAppSelector((state) => state.arena);
     const dispatch = useAppDispatch();
 
     const isValid = areBotsValid(bots);
@@ -69,6 +70,7 @@ export const UIControls: React.VFC = () => {
                 className="fa-2xl"
                 onClick={() => dispatch(stopArena())}
             />
+            {formatTime(elapsedTime)}
         </div>
     );
 
